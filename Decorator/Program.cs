@@ -16,8 +16,7 @@
 
             LoggingBehavior stringBehavior = new LoggingBehavior(new AppendingBehavior(new DefaultStringBehavior()));
 
-            stringBehavior.Log(stringBehavior.Reverse(input));
-
+            Console.WriteLine(stringBehavior.Reverse(input));
             Console.ReadLine();
         }
     }

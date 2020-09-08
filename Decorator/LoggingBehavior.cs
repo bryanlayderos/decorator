@@ -13,12 +13,8 @@
 
         public string Reverse(string input)
         {
-            return this.stringBehavior.Reverse(input);
-        }
-
-        public void Log(string input)
-        {
             this.logger.Log(input);
+            return this.stringBehavior.Reverse(input);
         }
     }
 }
