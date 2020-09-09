@@ -3,18 +3,20 @@
     public class LoggingBehavior : IStringBehavior
     {
         private IStringBehavior stringBehavior;
-        private DebugLogger logger;
+        private ILogger logger;
 
-        public LoggingBehavior(IStringBehavior stringBehavior)
+        public LoggingBehavior(IStringBehavior stringBehavior, ILogger logger)
         {
             this.stringBehavior = stringBehavior;
-            this.logger = new DebugLogger();
+            this.logger = logger;
         }
 
         public string Reverse(string input)
         {
-            this.logger.Log(input);
-            return this.stringBehavior.Reverse(input);
+            string reverse = this.stringBehavior.Reverse(input);
+            this.logger.Log(reverse);
+
+            return reverse;
         }
     }
 }

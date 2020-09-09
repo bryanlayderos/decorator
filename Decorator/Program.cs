@@ -11,10 +11,12 @@
         public static void Main(string[] args)
         {
             string input = string.Empty;
+            DebugLogger logger = new DebugLogger();
+
             Console.Write("Enter a string: ");
             input = Console.ReadLine();
 
-            LoggingBehavior stringBehavior = new LoggingBehavior(new AppendingBehavior(new DefaultStringBehavior()));
+            LoggingBehavior stringBehavior = new LoggingBehavior(new AppendingBehavior(new DefaultStringBehavior()), logger);
 
             Console.WriteLine(stringBehavior.Reverse(input));
             Console.ReadLine();
