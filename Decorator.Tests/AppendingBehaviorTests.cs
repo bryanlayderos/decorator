@@ -1,21 +1,21 @@
-namespace Decorator.Tests
+﻿namespace Decorator.Tests
 {
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
 
     [TestClass]
-    public class DefaultStringBehaviorTests
+    public class AppendingBehaviorTests
     {
         private readonly string sampleString = "ABCD";
-        private readonly string expectedReversedString = "DCBA";
+        private readonly string expectedReversedString = "DCBA ABCD";
 
         [TestMethod]
-        public void Should_Reverse_SampleString()
+        public void Should_Append_ReverseString()
         {
             // Arrange
             string resultString;
-            var stringBehavior = new DefaultStringBehavior();
+            var stringBehavior = new AppendingBehavior(new DefaultStringBehavior());
 
             // Act
             resultString = stringBehavior.Reverse(this.sampleString);
