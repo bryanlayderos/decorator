@@ -2,8 +2,8 @@
 {
     public class LoggingBehavior : IStringBehavior
     {
-        private IStringBehavior stringBehavior;
-        private ILogger logger;
+        private readonly IStringBehavior stringBehavior;
+        private readonly ILogger logger;
 
         public LoggingBehavior(IStringBehavior stringBehavior, ILogger logger)
         {
